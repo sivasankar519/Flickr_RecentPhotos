@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MBProgressHUD.h";
+#import "MBProgressHUD.h"
 
 static NSString * const API_KEY = @"d515b0f9f2c88d498153db3c68649bbe";
 
