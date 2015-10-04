@@ -93,8 +93,13 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
     if(photoIndex >= urlsArray.count) return;
     
     photoIndex++;
-    [self.imgView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:urlsArray[photoIndex]]]];
-    self.picTitle.text = recentPhotos[photoIndex][@"title"];
+    [UIView transitionWithView:self.imgView duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+                           self.imgView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:urlsArray[photoIndex]]];
+                           self.picTitle.text = recentPhotos[photoIndex][@"title"];
+                       } completion:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
