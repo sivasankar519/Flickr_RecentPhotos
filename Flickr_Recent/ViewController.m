@@ -30,11 +30,12 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
     [super viewDidLoad];
     
     [self getRecentPhotos];
+    
+    
     HUD = [[MBProgressHUD alloc]init];
     [self.view addSubview:HUD];
     HUD.mode = MBProgressHUDModeIndeterminate;
     HUD.labelText = @"Loading";
-    [HUD removeFromSuperViewOnHide];
     [HUD show:YES];
     
     UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
@@ -63,6 +64,7 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.imgView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:urlsArray[photoIndex]]]];
+                    photoIndex++;
                     self.picTitle.text = recentPhotos[photoIndex][@"title"];
                     HUD.hidden = YES;
                 });
@@ -92,12 +94,13 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
     
     if(photoIndex >= urlsArray.count) return;
     
-    photoIndex++;
+    
     [UIView transitionWithView:self.imgView duration:0.5
                        options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
                            self.imgView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:urlsArray[photoIndex]]];
                            self.picTitle.text = recentPhotos[photoIndex][@"title"];
                        } completion:nil];
+    photoIndex++;
     
     
 }
