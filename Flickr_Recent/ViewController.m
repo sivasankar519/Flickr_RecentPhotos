@@ -12,7 +12,7 @@
 
 static NSString * const API_KEY = @"d515b0f9f2c88d498153db3c68649bbe";
 
-static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&&api_key=%@&format=json&nojsoncallback=1";
+static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=%@&format=json&nojsoncallback=1";
 //&per_page=2,,, &page optional parmeters
 
 @interface ViewController (){
@@ -20,7 +20,6 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
     NSMutableArray *urlsArray;
     int photoIndex;
     MBProgressHUD *HUD;
-   
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *picTitle;
@@ -37,7 +36,7 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkForNetwork) name:kReachabilityChangedNotification object:nil];
     self.reachability = [Reachability reachabilityForInternetConnection];
     [self.reachability startNotifier];
-    
+
     [self checkForNetwork];
     
     UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
@@ -81,7 +80,8 @@ static NSString * const recentPhotosURL = @"https://api.flickr.com/services/rest
     
     NSString *urlString = [NSString stringWithFormat:recentPhotosURL, API_KEY];
     
-    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
     [[session dataTaskWithURL:[NSURL URLWithString:urlString]
             completionHandler:^(NSData *data,
                                 NSURLResponse *response,
