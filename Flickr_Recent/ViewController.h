@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIGestureRecognizerDelegate>
 
-
+@property (nonatomic) Reachability *reachability;
+@property (nonatomic) BOOL reachable;
 @end
 

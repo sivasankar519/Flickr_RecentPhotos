@@ -18,53 +18,84 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jjz-Hw-rs2">
-                                <rect key="frame" x="16" y="86" width="568" height="366"/>
+                                <rect key="frame" x="16" y="92" width="568" height="411"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flickr_Recent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9m-Da-g4x">
-                                <rect key="frame" x="192" y="28" width="215" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="2sy-4R-CRV"/>
-                                    <constraint firstAttribute="width" constant="215" id="d63-U7-dKS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="411" id="irv-ta-v0G"/>
+                                    <constraint firstAttribute="height" constant="411" id="xJm-Pw-Nsk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ec-fc-Z5U">
-                                <rect key="frame" x="16" y="482" width="568" height="80"/>
+                                <rect key="frame" x="16" y="511" width="568" height="69"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="L3n-qH-43q"/>
-                                    <constraint firstAttribute="width" constant="568" id="OWc-ds-IFe"/>
+                                    <constraint firstAttribute="height" priority="750" constant="69" id="Kiy-cY-4a2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uav-mT-Gua">
+                                <rect key="frame" x="539" y="28" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="3MF-Ek-kPg"/>
+                                    <constraint firstAttribute="height" constant="45" id="y4v-ah-M7S"/>
+                                </constraints>
+                                <state key="normal" image="wifi">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="statusActn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="H5k-IF-Sl9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flickr Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lw4-3t-LST">
+                                <rect key="frame" x="225" y="28" width="150" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="CBe-Ol-YrM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.57637931421885491" green="0.62625996782471371" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.80400482600000001" blue="0.4553175049" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="t9m-Da-g4x" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="Ihe-JZ-dmy"/>
-                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Nnh-oQ-KDY"/>
-                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="top" secondItem="jjz-Hw-rs2" secondAttribute="bottom" constant="30" id="QIf-Bb-l7S"/>
-                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="QMC-jZ-gPJ"/>
-                            <constraint firstItem="jjz-Hw-rs2" firstAttribute="top" secondItem="t9m-Da-g4x" secondAttribute="bottom" constant="18" id="QdG-Vz-4Mv"/>
-                            <constraint firstItem="jjz-Hw-rs2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ZAS-yL-IVQ"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3Ec-fc-Z5U" secondAttribute="bottom" constant="38" id="dDC-XS-UCH"/>
-                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="centerX" secondItem="t9m-Da-g4x" secondAttribute="centerX" id="dJD-5U-sT5"/>
-                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="centerX" secondItem="jjz-Hw-rs2" secondAttribute="centerX" id="dqP-Fa-e4l"/>
-                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="exH-eD-vD1"/>
+                            <constraint firstItem="uav-mT-Gua" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="7VE-Nl-EhZ"/>
+                            <constraint firstAttribute="centerX" secondItem="3Ec-fc-Z5U" secondAttribute="centerX" id="Abh-xn-XbR"/>
+                            <constraint firstItem="jjz-Hw-rs2" firstAttribute="top" secondItem="Lw4-3t-LST" secondAttribute="bottom" constant="32" id="DR9-aR-sRz"/>
+                            <constraint firstAttribute="centerX" secondItem="Lw4-3t-LST" secondAttribute="centerX" id="F5p-Es-SqT"/>
+                            <constraint firstItem="Lw4-3t-LST" firstAttribute="leading" secondItem="jjz-Hw-rs2" secondAttribute="leading" id="I79-kb-OkY"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ec-fc-Z5U" secondAttribute="trailing" constant="16" id="Q02-0E-cpI"/>
+                            <constraint firstItem="uav-mT-Gua" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="UMu-cP-TZy"/>
+                            <constraint firstItem="Lw4-3t-LST" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Wle-Kr-qKH"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3Ec-fc-Z5U" secondAttribute="bottom" constant="20" id="XSz-l2-CxR"/>
+                            <constraint firstAttribute="trailing" secondItem="jjz-Hw-rs2" secondAttribute="trailing" constant="16" id="Yni-Ok-BBn"/>
+                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="top" secondItem="jjz-Hw-rs2" secondAttribute="bottom" constant="8" id="bXG-Sr-8aM"/>
+                            <constraint firstItem="jjz-Hw-rs2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="jMU-m9-HAv"/>
+                            <constraint firstItem="jjz-Hw-rs2" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="92" id="kfz-UU-kDx"/>
+                            <constraint firstAttribute="centerX" secondItem="jjz-Hw-rs2" secondAttribute="centerX" id="pws-RM-tHw"/>
+                            <constraint firstItem="3Ec-fc-Z5U" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="v66-dH-ayG"/>
+                            <constraint firstItem="Lw4-3t-LST" firstAttribute="trailing" secondItem="jjz-Hw-rs2" secondAttribute="trailing" id="wIJ-61-aRD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I79-kb-OkY"/>
+                                <exclude reference="wIJ-61-aRD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="imgView" destination="jjz-Hw-rs2" id="9hv-na-G7E"/>
                         <outlet property="picTitle" destination="3Ec-fc-Z5U" id="uGQ-ub-vbM"/>
+                        <outlet property="statusButton" destination="uav-mT-Gua" id="59Z-io-Nfx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="222"/>
+            <point key="canvasLocation" x="-292" y="-69"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wifi" width="150" height="150"/>
+    </resources>
 </document>
